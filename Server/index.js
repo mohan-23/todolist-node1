@@ -7,9 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/todo-test", {
-  err: new ServerSelectionError(),
-});
+mongoose.connect("mongodb://127.0.0.1:27017/todo-test");
 
 app.get("/get", (req, res) => {
   TodoModel.find()
